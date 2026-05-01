@@ -31,7 +31,7 @@ public class AuthController {
         return ResponseEntity.ok(authService.login(request));
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN','USER','APPROVER')")
+    @PreAuthorize("isAuthenticated()")
     @PostMapping("/logout")
     public void logout(HttpServletRequest request) {
 

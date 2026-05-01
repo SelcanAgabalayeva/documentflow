@@ -4,6 +4,7 @@ import com.selcan.documentflow.dtos.AuditLogDto;
 import com.selcan.documentflow.service.AuditService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ import java.util.List;
 public class AuditController {
 
     private final AuditService auditService;
-
+    @PreAuthorize("hasAnyRole('ADMIN','APPROVER')")
     @GetMapping("/{documentId}")
     public ResponseEntity<List<AuditLogDto>> getLogs(@PathVariable Long documentId) {
         return ResponseEntity.ok(auditService.getByDocument(documentId));

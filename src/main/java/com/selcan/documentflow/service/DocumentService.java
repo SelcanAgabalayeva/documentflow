@@ -9,12 +9,7 @@ import java.util.List;
 public interface DocumentService {
     DocumentResponseDto upload(DocumentCreateDto dto, String username);
 
-
-
-    DocumentResponseDto getById(Long id);
-
     void delete(Long id);
-
 
     void approve(Long documentId, String approverEmail);
 

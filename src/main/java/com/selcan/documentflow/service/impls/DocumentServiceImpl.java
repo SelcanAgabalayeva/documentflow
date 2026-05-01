@@ -116,13 +116,7 @@ public class DocumentServiceImpl implements DocumentService {
                 .toList();
     }
 
-    @Override
-    public DocumentResponseDto getById(Long id) {
-        Document doc = documentRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Not found"));
 
-        return map(doc);
-    }
 
     @Override
     public void delete(Long id) {

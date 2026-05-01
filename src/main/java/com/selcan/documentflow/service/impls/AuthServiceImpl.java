@@ -50,7 +50,6 @@ public class AuthServiceImpl implements AuthService {
                 .user(mapToResponse(user))
                 .build();
     }
-
     @Override
     public AuthResponse login(LoginDto request) {
 

@@ -26,7 +26,6 @@ public class DocumentflowApplication {
 				user.setFullName("Approver");
 				user.setPassword(encoder.encode("123457"));
 				user.setRole(Role.APPROVER);
-
 				repo.save(user);
 			}
 		};

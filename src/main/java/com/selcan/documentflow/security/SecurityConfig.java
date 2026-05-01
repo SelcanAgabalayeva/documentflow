@@ -47,7 +47,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/documents/upload").hasRole("USER")
                         .requestMatchers("/api/documents/my-documents").hasRole("USER")
                         .requestMatchers("/api/documents/pending-approvals").hasRole("APPROVER")
-                        .requestMatchers("/api/documents/*").authenticated()
+
 
                         .requestMatchers("/api/approvals/**").hasRole("APPROVER")
 
